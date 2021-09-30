@@ -38,10 +38,15 @@
   background-size: cover;
 }
 
-#navPlaceholder {
+#navBarPlaceholder {
   height: 8vh;
   width: 100vw;
   background-color: #212529;
+}
+
+#navBar {
+  display: flex;
+  top: 0;
 }
 
 .headerNav {

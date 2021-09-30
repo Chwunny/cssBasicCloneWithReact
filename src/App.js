@@ -4,26 +4,26 @@ import './App.css'
 // import splash from './welcomePage.png'
 
 const App = () => {
-
+  
   const [offset, setOffset] = useState(0);
-
+  
   useEffect(() => {
     window.onscroll = () => {
       setOffset(window.pageYOffset)
     }
   }, []);
- 
-  let nav = document.getElementById('nav')
-  let navPlaceholder = document.getElementById('navPlaceholder')
+  
+  // let navBar = document.getElementById('navBar')
+  // let navBarPlaceholder = document.getElementById('navBarPlaceholder')
 
-  offset > 0 ? nav.classList.add('navIsMoving') : nav.classList.remove('navIsMoving')
-  offset > 0 ? navPlaceholder.classList.remove('hidden') : navPlaceholder.classList.add('hidden')
-
+  
+  // offset > 0 ? document.getElementById('navBar').classList.add('navIsMoving') : document.getElementById('navBar').classList.remove('navIsMoving')
+  // offset > 0 ? document.getElementById('navBarPlaceholder').classList.remove('hidden') : document.getElementById('navBarPlaceholder').classList.add('hidden')
   return (
-      <div className="App">
+    <div className="App">
         <div className="welcomePage posAbsolute">
-          <div id="navPlaceholder" className="hidden"></div>
-          <nav id="nav" className="headerNav">
+          <div id="navBarPlaceholder" class={offset > 0 ? null : 'hidden'}></div>
+          <nav id="navBar" class={offset > 0 ? 'navIsMoving' : null}>
             <div className="navBox1 flex jcEnd">
               <img id="homeLogo" className="btn" src="https://startbootstrap.github.io/startbootstrap-agency/assets/img/navbar-logo.svg" alt="" />
             </div>
